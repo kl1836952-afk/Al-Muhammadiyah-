@@ -13,13 +13,10 @@
       --white: #ffffff;
       --gray: #f5f5f5;
       --text-gray: #555;
-      --gold: #c8a84b;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       font-family: 'Cairo', sans-serif;
       background: var(--white);
@@ -34,27 +31,21 @@
       background: rgba(13,13,13,0.96);
       backdrop-filter: blur(8px);
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 5%;
-      height: 70px;
+      padding: 0 5%; height: 70px;
       border-bottom: 2px solid var(--red);
     }
     .nav-logo { display: flex; align-items: center; gap: 12px; }
     .nav-logo img { height: 46px; object-fit: contain; }
     .nav-links { display: flex; gap: 28px; list-style: none; }
     .nav-links a {
-      color: #ddd;
-      text-decoration: none;
-      font-size: 0.92rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
+      color: #ddd; text-decoration: none;
+      font-size: 0.92rem; font-weight: 600;
       transition: color .25s;
     }
     .nav-links a:hover { color: var(--red); }
     .nav-cta {
-      background: var(--red);
-      color: #fff !important;
-      padding: 7px 18px;
-      border-radius: 4px;
+      background: var(--red); color: #fff !important;
+      padding: 7px 18px; border-radius: 4px;
       transition: background .25s !important;
     }
     .nav-cta:hover { background: var(--dark-red) !important; }
@@ -64,304 +55,147 @@
       min-height: 100vh;
       background: linear-gradient(135deg, #0d0d0d 0%, #1a0000 60%, #2a0000 100%);
       display: flex; align-items: center; justify-content: center;
-      text-align: center;
-      padding: 100px 5% 60px;
-      position: relative;
-      overflow: hidden;
+      text-align: center; padding: 100px 5% 60px;
+      position: relative; overflow: hidden;
     }
     .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e01a1a' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       opacity: .5;
     }
-    .hero-ship {
-      position: absolute;
-      bottom: -10px; left: -60px;
-      font-size: 18rem;
-      opacity: 0.04;
-      animation: drift 12s ease-in-out infinite alternate;
-      user-select: none;
-    }
-    @keyframes drift { from { transform: translateX(0) rotate(-3deg); } to { transform: translateX(80px) rotate(3deg); } }
-
     .hero-content { position: relative; z-index: 1; }
     .hero-badge {
-      display: inline-block;
-      background: rgba(224,26,26,0.15);
-      border: 1px solid rgba(224,26,26,0.4);
-      color: var(--red);
-      padding: 6px 18px;
-      border-radius: 30px;
-      font-size: .82rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      margin-bottom: 22px;
-      animation: fadeUp .7s ease both;
+      display: inline-block; background: rgba(224,26,26,0.15);
+      border: 1px solid rgba(224,26,26,0.4); color: var(--red);
+      padding: 6px 18px; border-radius: 30px;
+      font-size: .82rem; font-weight: 700; margin-bottom: 22px;
     }
-    .hero-logo { width: min(320px, 80vw); margin-bottom: 24px; animation: fadeUp .8s .1s ease both; }
     .hero h1 {
-      font-family: 'Tajawal', sans-serif;
-      font-size: clamp(1.6rem, 4vw, 3rem);
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.35;
-      margin-bottom: 16px;
-      animation: fadeUp .9s .2s ease both;
+      font-family: 'Tajawal', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900; color: #fff; line-height: 1.35; margin-bottom: 24px;
     }
     .hero h1 span { color: var(--red); }
     .hero p {
-      color: #ccc;
-      font-size: clamp(.95rem, 2vw, 1.15rem);
-      max-width: 600px;
-      margin: 0 auto 36px;
-      line-height: 1.8;
-      animation: fadeUp .9s .3s ease both;
+      color: #ccc; font-size: clamp(.95rem, 2vw, 1.15rem);
+      max-width: 600px; margin: 0 auto 36px; line-height: 1.8;
     }
-    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; animation: fadeUp .9s .4s ease both; }
-    .btn-primary {
-      background: var(--red);
-      color: #fff;
-      padding: 14px 32px;
-      border-radius: 5px;
-      font-size: 1rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all .25s;
-      box-shadow: 0 4px 20px rgba(224,26,26,.4);
-    }
-    .btn-primary:hover { background: var(--dark-red); transform: translateY(-2px); }
-    .btn-outline {
-      border: 2px solid #fff;
-      color: #fff;
-      padding: 12px 28px;
-      border-radius: 5px;
-      font-size: 1rem;
-      font-weight: 700;
-      text-decoration: none;
+    .hero-btns { display: flex; flex-direction: column; gap: 14px; align-items: center; max-width: 320px; margin: 0 auto; }
+    .btn-hero {
+      width: 100%; padding: 14px; border-radius: 8px;
+      font-size: 1.1rem; font-weight: 700; text-decoration: none;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
       transition: all .25s;
     }
-    .btn-outline:hover { background: rgba(255,255,255,.1); transform: translateY(-2px); }
-
-    @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+    .btn-wa { background: #e01a1a; color: #fff; box-shadow: 0 4px 15px rgba(224,26,26,.3); }
+    .btn-wa:hover { background: #b01010; }
+    .btn-fb { background: #0066cc; color: #fff; }
+    .btn-show { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.3); }
 
     /* ── STATS BAR ── */
     .stats-bar {
-      background: var(--red);
-      padding: 20px 5%;
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;
+      background: var(--red); padding: 30px 5%;
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; text-align: center;
     }
-    .stat { text-align: center; color: #fff; }
-    .stat-num { font-size: 1.9rem; font-weight: 900; line-height: 1; }
-    .stat-label { font-size: .78rem; opacity: .88; margin-top: 2px; }
+    .stat { color: #fff; }
+    .stat-num { font-size: 2.2rem; font-weight: 900; }
+    .stat-label { font-size: .85rem; opacity: .9; margin-top: 4px; }
 
     /* ── SECTION BASE ── */
-    section { padding: 80px 5%; }
+    section { padding: 60px 5%; }
     .section-tag {
-      display: inline-block;
-      background: rgba(224,26,26,.1);
-      color: var(--red);
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      padding: 4px 14px;
-      border-radius: 20px;
-      margin-bottom: 12px;
+      display: inline-block; background: rgba(224,26,26,.1); color: var(--red);
+      font-size: .78rem; font-weight: 800; padding: 4px 14px; border-radius: 20px; margin-bottom: 12px;
     }
     .section-title {
-      font-family: 'Tajawal', sans-serif;
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-      font-weight: 800;
-      line-height: 1.3;
-      margin-bottom: 14px;
+      font-family: 'Tajawal', sans-serif; font-size: 1.8rem;
+      font-weight: 800; margin-bottom: 14px; text-align: center;
     }
-    .section-sub { color: var(--text-gray); font-size: 1rem; line-height: 1.8; max-width: 560px; }
+    .section-sub { color: var(--text-gray); font-size: .95rem; line-height: 1.7; text-align: center; margin-bottom: 32px; }
+
+    /* ── SHOWROOM (معرض السيارات) ── */
+    .showroom { background: #0f0f0f; color: #fff; text-align: center; }
+    .tabs-container { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; }
+    .tab-btn {
+      background: #222; color: #fff; border: none; padding: 10px 18px;
+      border-radius: 30px; font-family: 'Cairo'; font-size: .9rem; cursor: pointer;
+      display: flex; align-items: center; gap: 6px; transition: all .25s;
+    }
+    .tab-btn.active { background: var(--red); }
+    .car-card {
+      background: #1a1a1a; border-radius: 12px; padding: 24px; text-align: right;
+      border: 1px solid #333; max-width: 400px; margin: 0 auto; display: none;
+    }
+    .car-card.active { display: block; }
+    .car-card h3 { font-size: 1.3rem; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+    .car-card p { color: #aaa; font-size: .9rem; line-height: 1.6; margin-bottom: 16px; }
+    .status-badge { display: inline-block; background: rgba(40,167,69,.15); color: #28a745; padding: 4px 12px; border-radius: 4px; font-size: .8rem; font-weight: 700; }
 
     /* ── SERVICES ── */
-    .services { background: var(--gray); }
-    .services-header { text-align: center; margin-bottom: 52px; }
-    .services-header .section-sub { margin: 0 auto; }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      max-width: 1200px; margin: 0 auto;
-    }
+    .services { background: var(--white); }
+    .services-grid { display: grid; gap: 20px; }
     .service-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 32px 28px;
-      box-shadow: 0 2px 16px rgba(0,0,0,.06);
-      border-top: 4px solid transparent;
-      transition: all .3s;
-      position: relative; overflow: hidden;
+      background: var(--white); border-radius: 12px; padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.05); border: 1px solid #eee;
+      display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
     }
-    .service-card:hover { border-top-color: var(--red); transform: translateY(-5px); box-shadow: 0 12px 32px rgba(224,26,26,.12); }
-    .service-icon { font-size: 2.6rem; margin-bottom: 18px; display: block; }
-    .service-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; }
-    .service-card p { color: var(--text-gray); font-size: .9rem; line-height: 1.75; }
-
-    /* ── SPECIALTIES ── */
-    .specialties { background: #fff; }
-    .spec-wrapper {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-      max-width: 1100px; margin: 0 auto;
-    }
-    .spec-list { display: flex; flex-direction: column; gap: 18px; margin-top: 32px; }
-    .spec-item {
-      display: flex; align-items: flex-start; gap: 16px;
-      background: var(--gray); border-radius: 10px; padding: 18px 20px;
-      border-right: 4px solid var(--red);
-      transition: box-shadow .25s;
-    }
-    .spec-item:hover { box-shadow: 0 4px 20px rgba(224,26,26,.12); }
-    .spec-icon { font-size: 2rem; flex-shrink: 0; }
-    .spec-item h4 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
-    .spec-item p { font-size: .85rem; color: var(--text-gray); line-height: 1.65; }
-    .spec-visual {
-      background: linear-gradient(145deg, #0d0d0d, #1e0000);
-      border-radius: 16px;
-      min-height: 380px;
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-    }
-    .spec-visual::after {
-      content: '🚢';
-      font-size: 9rem;
-      opacity: .15;
-      position: absolute;
-      bottom: -10px; left: -20px;
-      animation: drift 8s ease-in-out infinite alternate;
-    }
-    .spec-visual-inner { position: relative; z-index: 1; text-align: center; padding: 40px; }
-    .spec-visual-inner h3 { color: #fff; font-size: 1.4rem; font-weight: 800; margin-bottom: 8px; }
-    .spec-visual-inner p { color: rgba(255,255,255,.65); font-size: .9rem; }
-    .spec-visual-badge {
-      display: inline-block;
-      background: var(--red);
-      color: #fff;
-      padding: 8px 22px;
-      border-radius: 30px;
-      font-size: .85rem;
-      font-weight: 700;
-      margin-top: 20px;
-    }
+    .service-icon-box { width: 50px; height: 50px; background: var(--gray); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+    .service-card h3 { font-size: 1.15rem; font-weight: 700; }
+    .service-card p { color: var(--text-gray); font-size: .9rem; line-height: 1.6; }
 
     /* ── TRIPTYQUE ── */
-    .triptyque { background: var(--black); color: #fff; }
-    .triptyque .section-title { color: #fff; }
-    .triptyque .section-sub { color: #aaa; }
-    .tript-header { text-align: center; margin-bottom: 50px; }
-    .tript-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+    .triptyque { background: #0f0f0f; color: #fff; }
+    .tript-grid { display: grid; gap: 20px; }
     .tript-card {
-      border: 1px solid rgba(224,26,26,.3);
-      border-radius: 12px;
-      padding: 30px 24px;
-      text-align: center;
-      transition: all .3s;
+      background: #161616; border: 1px solid #262626; border-radius: 12px; padding: 24px;
     }
-    .tript-card:hover { background: rgba(224,26,26,.08); border-color: var(--red); }
-    .tript-card .icon { font-size: 2.8rem; margin-bottom: 14px; }
-    .tript-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
-    .tript-card p { font-size: .88rem; color: #aaa; line-height: 1.7; }
+    .tript-card .icon-box { font-size: 2.2rem; margin-bottom: 12px; }
+    .tript-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .tript-card p { color: #aaa; font-size: .88rem; line-height: 1.6; }
 
     /* ── WHY US ── */
-    .why { background: var(--gray); }
-    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 24px; max-width: 1100px; margin: 52px auto 0; }
-    .why-card { background: #fff; border-radius: 10px; padding: 28px 22px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
-    .why-card .num { font-size: 2.6rem; font-weight: 900; color: var(--red); line-height: 1; }
-    .why-card h4 { font-size: .95rem; font-weight: 700; margin: 8px 0 6px; }
-    .why-card p { font-size: .82rem; color: var(--text-gray); line-height: 1.6; }
+    .why { background: var(--white); }
+    .why-grid { display: grid; gap: 16px; }
+    .why-card { background: var(--white); border: 1px solid #eee; border-radius: 12px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,.03); }
+    .why-card .num { font-size: 2rem; font-weight: 900; color: var(--red); margin-bottom: 4px; }
+    .why-card h4 { font-size: 1rem; margin-bottom: 6px; }
+    .why-card p { color: var(--text-gray); font-size: .85rem; line-height: 1.6; }
+
+    /* ── FB BANNER ── */
+    .fb-banner { background: var(--gray); text-align: center; padding: 40px 5%; }
+    .fb-banner p { font-size: 1.1rem; margin-bottom: 16px; font-weight: 600; color: var(--black); }
+    .btn-fb-banner { display: inline-block; background: #0066cc; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 700; }
 
     /* ── CONTACT ── */
-    .contact { background: #fff; }
-    .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; max-width: 1100px; margin: 0 auto; }
-    .contact-info { display: flex; flex-direction: column; gap: 22px; margin-top: 32px; }
-    .contact-item {
-      display: flex; align-items: center; gap: 16px;
-      background: var(--gray); border-radius: 10px; padding: 18px 20px;
-    }
-    .contact-item .ci-icon { font-size: 1.7rem; flex-shrink: 0; }
-    .contact-item strong { display: block; font-size: .8rem; color: var(--text-gray); margin-bottom: 2px; }
-    .contact-item a, .contact-item span { font-size: 1rem; font-weight: 700; color: var(--black); text-decoration: none; }
-    .contact-item a:hover { color: var(--red); }
-    .contact-form { background: var(--black); border-radius: 16px; padding: 40px 36px; }
-    .contact-form h3 { color: #fff; font-size: 1.3rem; font-weight: 800; margin-bottom: 28px; }
-    .form-group { margin-bottom: 18px; }
-    .form-group label { display: block; color: #ccc; font-size: .82rem; font-weight: 600; margin-bottom: 6px; }
+    .contact { background: var(--white); }
+    .info-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px; }
+    .info-card { background: var(--gray); border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; gap: 16px; }
+    .info-card .icon { font-size: 1.5rem; }
+    .info-card strong { display: block; font-size: .8rem; color: var(--text-gray); }
+    .info-card span, .info-card a { font-size: .95rem; font-weight: 700; color: var(--black); text-decoration: none; }
+    
+    .contact-form { background: #0f0f0f; border-radius: 16px; padding: 32px 24px; color: #fff; }
+    .contact-form h3 { font-size: 1.3rem; margin-bottom: 24px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; color: #ccc; font-size: .85rem; margin-bottom: 6px; }
     .form-group input, .form-group textarea, .form-group select {
-      width: 100%;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      color: #fff;
-      padding: 12px 14px;
-      border-radius: 7px;
-      font-family: 'Cairo', sans-serif;
-      font-size: .92rem;
-      outline: none;
-      transition: border .25s;
+      width: 100%; background: #222; border: 1px solid #333; color: #fff;
+      padding: 12px; border-radius: 8px; font-family: 'Cairo'; font-size: .9rem; outline: none;
     }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--red); }
-    .form-group textarea { min-height: 110px; resize: vertical; }
-    .form-group select option { background: #222; }
-    .btn-submit {
-      width: 100%;
-      background: var(--red);
-      color: #fff;
-      border: none;
-      padding: 14px;
-      border-radius: 7px;
-      font-family: 'Cairo', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background .25s;
-    }
-    .btn-submit:hover { background: var(--dark-red); }
+    .form-group textarea { min-height: 100px; }
+    .btn-submit { width: 100%; background: var(--red); color: #fff; border: none; padding: 14px; border-radius: 8px; font-family: 'Cairo'; font-size: 1rem; font-weight: 700; cursor: pointer; }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--black);
-      color: #aaa;
-      text-align: center;
-      padding: 30px 5%;
-      border-top: 2px solid var(--red);
-    }
-    footer img { height: 50px; object-fit: contain; margin-bottom: 12px; }
-    footer p { font-size: .82rem; }
-    footer strong { color: var(--red); }
+    footer { background: #0d0d0d; color: #fff; padding: 40px 5%; text-align: right; border-top: 2px solid var(--red); }
+    footer h2 { font-size: 1.5rem; margin-bottom: 6px; }
+    footer .sub { color: var(--red); font-size: .85rem; margin-bottom: 16px; }
+    footer .details { color: #aaa; font-size: .9rem; line-height: 1.8; margin-bottom: 24px; }
+    footer .copy { text-align: center; border-top: 1px solid #222; padding-top: 20px; font-size: .8rem; color: #666; }
 
-    /* ── WHATSAPP FLOAT ── */
-    .wa-float {
-      position: fixed;
-      bottom: 24px;
-      left: 24px;
-      background: #25d366;
-      color: #fff;
-      width: 58px; height: 58px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.7rem;
-      text-decoration: none;
-      box-shadow: 0 4px 18px rgba(37,211,102,.45);
-      z-index: 9999;
-      transition: transform .25s;
-      animation: pulse-green 2.5s infinite;
-    }
-    .wa-float:hover { transform: scale(1.12); }
-    @keyframes pulse-green {
-      0%,100%{ box-shadow:0 4px 18px rgba(37,211,102,.45); }
-      50%{ box-shadow:0 4px 32px rgba(37,211,102,.8); }
-    }
+    /* ── FLOAT WA ── */
+    .wa-float { position: fixed; bottom: 20px; left: 20px; background: #25d366; color: #fff; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,.2); z-index: 9999; }
 
-    /* ── RESPONSIVE ── */
-    @media(max-width:768px){
-      .nav-links { display:none; }
-      .spec-wrapper, .contact-wrapper { grid-template-columns:1fr; }
-      .spec-visual { min-height:220px; }
-      .stats-bar { gap:24px; }
+    @media(min-width: 769px) {
+      .services-grid, .tript-grid, .why-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -369,236 +203,281 @@
 
 <nav>
   <div class="nav-logo">
-    <img src="/mnt/user-data/uploads/1000456549.jpg" alt="المحمدية" />
+    <span style="color:#fff; font-weight:900; font-size:1.3rem;">المحمدية</span>
   </div>
   <ul class="nav-links">
     <li><a href="#services">خدماتنا</a></li>
-    <li><a href="#specialties">تخصصاتنا</a></li>
-    <li><a href="#triptyque">التريبتك</a></li>
-    <li><a href="#why">لماذا نحن</a></li>
-    <li><a href="#contact" class="nav-cta">تواصل معنا</a></li>
+    <li><a href="#showroom">معرض السيارات</a></li>
+    <li><a href="#contact">تواصل معنا</a></li>
   </ul>
 </nav>
 
 <section class="hero" id="home">
-  <div class="hero-ship">🚢</div>
   <div class="hero-content">
-    <div class="hero-badge">⚓ ميناء الإسكندرية — منذ سنوات</div>
-    <img src="/mnt/user-data/uploads/1000456549.jpg" class="hero-logo" alt="لوجو المحمدية" />
-    <h1>
-      الشريك الموثوق لـ<span>التخليص الجمركي</span><br />
-      في ميناء الإسكندرية
-    </h1>
-    <p>
-      متخصصون في استيراد السيارات الألمانية والصينية الكهربائية الحديثة
-      وسيارات النقل — إجراءات سريعة، احترافية، وشفافية كاملة.
+    <div class="hero-badge">⚓ التخلص الجمركي - الإسكندرية</div>
+    <h1>المحمدية</h1>
+    <p style="color:var(--red); font-weight:700; margin-top:-15px; margin-bottom:20px;">للتخليص الجمركي - ميناء الإسكندرية</p>
+    
+    <div style="background:rgba(224,26,26,0.08); border:1px solid rgba(224,26,26,0.3); padding:8px 16px; border-radius:30px; display:inline-block; margin-bottom:24px; color:#fff; font-size:.9rem;">
+      ⚓ خبرة واحترافية في خدمتك
+    </div>
+
+    <h2 style="color:#fff; font-size:1.3rem; font-weight:700; margin-bottom:20px; line-height:1.6;">
+      متخصصون في <span style="color:var(--red);">السيارات الألمانية</span> والصينية الكهربائية<br/>وسيارات النقل – ميناء الإسكندرية
+    </h2>
+    
+    <p style="font-size:.9rem; color:#aaa; max-width:500px; margin:0 auto 32px;">
+      إجراءات جمركية سريعة وموثوقة. نحن شريكك من لحظة وصول السفينة حتى تسلّم مفاتيح سيارتك.
     </p>
+
     <div class="hero-btns">
-      <a href="#contact" class="btn-primary">📞 تواصل الآن</a>
-      <a href="#services" class="btn-outline">اعرف أكثر ↓</a>
+      <a href="https://wa.me/201274833844" class="btn-hero btn-wa" target="_blank">🟢 واتساب فوري</a>
+      <a href="https://www.facebook.com/share/18iQDAXuWn/" class="btn-hero btn-fb" target="_blank">📘 صفحتنا على فيسبوك</a>
+      <a href="#showroom" class="btn-hero btn-show">شاهد سياراتنا ↓</a>
     </div>
   </div>
 </section>
 
 <div class="stats-bar">
-  <div class="stat"><div class="stat-num">+500</div><div class="stat-label">سيارة تم تخليصها</div></div>
-  <div class="stat"><div class="stat-num">+15</div><div class="stat-label">سنة خبرة</div></div>
+  <div class="stat"><div class="stat-num">3000+</div><div class="stat-label">سيارة تم تخليصها</div></div>
+  <div class="stat"><div class="stat-num">15+</div><div class="stat-label">سنة خبرة</div></div>
   <div class="stat"><div class="stat-num">100%</div><div class="stat-label">التزام بالمواعيد</div></div>
   <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">دعم متواصل</div></div>
 </div>
 
+<section class="showroom" id="showroom">
+  <div class="section-tag">معرض السيارات</div>
+  <h2 class="section-title">نخلص أفضل السيارات في العالم</h2>
+  <p class="section-sub" style="color:#ccc;">من السيارات الألمانية الفاخرة إلى أحدث الكهربائيات الصينية وسيارات النقل – خبرتنا شاملة.</p>
+  
+  <div class="tabs-container">
+    <button class="tab-btn active" onclick="switchTab('bmw')">🇩🇪 سيارات ألمانية</button>
+    <button class="tab-btn" onclick="switchTab('byd')">⚡ كهربائية صينية</button>
+    <button class="tab-btn" onclick="switchTab('truck')">🚛 سيارات النقل</button>
+  </div>
+
+  <div id="bmw" class="car-card active">
+    <h3>BMW – بي ام دبليو <span style="font-size:1.5rem;">🚗</span></h3>
+    <p>السلسلة 3, 5, 7 و X-Series – تخليص كامل بجميع الأوراق الرسمية.</p>
+    <span class="status-badge">✓ متاح التخليص</span>
+  </div>
+
+  <div id="byd" class="car-card">
+    <h3>Mercedes & Audi <span style="font-size:1.5rem;">⚡</span></h3>
+    <p>إجراءات استيراد موثوقة وسريعة لسيارات مرسيدس وأودي الكهربائية الفاخرة و e-tron.</p>
+    <span class="status-badge">✓ متاح التخليص</span>
+  </div>
+
+  <div id="truck" class="car-card">
+    <h3>الشاحنات وسيارات النقل <span style="font-size:1.5rem;">🚛</span></h3>
+    <p>فولكس فاجن النقل، سيارات النقل الثقيل والمتوسط والآليات التجارية بجميع أنواعها.</p>
+    <span class="status-badge">✓ متاح التخليص</span>
+  </div>
+</section>
+
 <section class="services" id="services">
-  <div class="services-header">
+  <div style="text-align:center;">
     <div class="section-tag">خدماتنا</div>
     <h2 class="section-title">كل ما تحتاجه في مكان واحد</h2>
-    <p class="section-sub">نقدم باقة متكاملة من خدمات التخليص الجمركي وما بعدها لضمان وصول سيارتك بسلاسة.</p>
+    <p class="section-sub">نقدم باقة متكاملة من خدمات التخليص الجمركي لضمان وصول سيارتك بسلاسة.</p>
   </div>
+  
   <div class="services-grid">
     <div class="service-card">
-      <span class="service-icon">🛃</span>
+      <div class="service-icon-box">🛃</div>
       <h3>التخليص الجمركي الكامل</h3>
       <p>إنهاء جميع الإجراءات الجمركية في ميناء الإسكندرية بأسرع وقت وأدق توثيق.</p>
     </div>
     <div class="service-card">
-      <span class="service-icon">🚗</span>
+      <div class="service-icon-box">🇩🇪</div>
       <h3>سيارات ألمانية فاخرة</h3>
-      <p>BMW، Mercedes، Volkswagen، Audi — خبرة واسعة في تخليص السيارات الأوروبية.</p>
+      <p>BMW, Mercedes, VW, Audi - خبرة واسعة في تخليص السيارات الأوروبية.</p>
     </div>
     <div class="service-card">
-      <span class="service-icon">⚡</span>
+      <div class="service-icon-box">⚡</div>
       <h3>سيارات صينية كهربائية</h3>
-      <p>BYD، Zeekr، Chery، Geely والمزيد — متخصصون في إجراءات السيارات الكهربائية الحديثة.</p>
+      <p>BYD, Zeekr, Chery, Geely والمزيد - متخصصون في إجراءات الكهرباء الحديثة.</p>
     </div>
     <div class="service-card">
-      <span class="service-icon">🚛</span>
+      <div class="service-icon-box">🚛</div>
       <h3>سيارات النقل والشاحنات</h3>
-      <p>تخليص مركبات النقل الثقيل والمتوسط، والآليات التجارية بجميع أنواعها.</p>
+      <p>تخليص مركبات النقل الثقيل والمتوسط والآليات التجارية بجميع أنواعها.</p>
     </div>
     <div class="service-card">
-      <span class="service-icon">📋</span>
+      <div class="service-icon-box">📋</div>
       <h3>التريبتك والتوثيق</h3>
       <p>استخراج وتوثيق التريبتك واستمارات الإدخال المؤقت لمركبات التجارة والرحلات.</p>
     </div>
     <div class="service-card">
-      <span class="service-icon">🏛️</span>
+      <div class="service-icon-box">🏛️</div>
       <h3>الاستشارات الجمركية</h3>
-      <p>تقييم التكاليف الجمركية مسبقاً، والتعامل مع الجهات الرسمية نيابةً عنك.</p>
+      <p>تقييم التكاليف الجمركية مسبقاً والتعامل مع الجهات الرسمية نيابة عنك.</p>
     </div>
   </div>
 </section>
 
-<section class="specialties" id="specialties">
-  <div class="spec-wrapper">
-    <div>
-      <div class="section-tag">تخصصاتنا</div>
-      <h2 class="section-title">سيارات المستقبل<br/>نخلصها اليوم</h2>
-      <p class="section-sub">مع تنامي سوق السيارات الكهربائية في مصر، نحن على الخط الأمامي لتخليص أحدث الموديلات.</p>
-      <div class="spec-list">
-        <div class="spec-item">
-          <div class="spec-icon">🔋</div>
-          <div>
-            <h4>السيارات الكهربائية الصينية</h4>
-            <p>إجراءات مخصصة للمركبات الكهربائية — بطاريات، محركات، وشهادات الأمان الفنية.</p>
-          </div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-icon">🇩🇪</div>
-          <div>
-            <h4>السيارات الألمانية الفاخرة</h4>
-            <p>خبرة عميقة في متطلبات استيراد المركبات الأوروبية وشهادات المطابقة.</p>
-          </div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-icon">🚚</div>
-          <div>
-            <h4>مركبات النقل التجاري</h4>
-            <p>شاحنات، سيارات نقل متوسطة وثقيلة، ومعدات خاصة.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="spec-visual">
-      <div class="spec-visual-inner">
-        <h3>ميناء الإسكندرية</h3>
-        <p>البوابة الرئيسية لاستيراد السيارات إلى مصر</p>
-        <div class="spec-visual-badge">⚓ خبراء المينا</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="triptyque" id="triptyque">
-  <div class="tript-header">
+<section class="triptyque">
+  <div style="text-align:center;">
     <div class="section-tag" style="background:rgba(224,26,26,.2)">التريبتك</div>
     <h2 class="section-title">خدمة التريبتك الاحترافية</h2>
-    <p class="section-sub" style="margin:0 auto;">وثيقة الإدخال المؤقت للمركبات — نستخرجها، نوثقها، ونتابعها معك من الألف للياء.</p>
+    <p class="section-sub" style="color:#aaa;">وثيقة الإدخال المؤقت للمركبات – نستخرجها، نوثقها، ونتابعها معك من الألف للياء.</p>
   </div>
+  
   <div class="tript-grid">
     <div class="tript-card">
-      <div class="icon">📝</div>
+      <div class="icon-box">📝</div>
       <h3>استخراج التريبتك</h3>
       <p>نتولى إعداد ملف طلب التريبتك بالكامل وتقديمه للجهات المختصة.</p>
     </div>
     <div class="tript-card">
-      <div class="icon">✅</div>
+      <div class="icon-box">✅</div>
       <h3>المتابعة والإنجاز</h3>
       <p>نتابع حالة الطلب يومياً ونبلغك بكل جديد حتى الاستلام.</p>
     </div>
     <div class="tript-card">
-      <div class="icon">🌍</div>
+      <div class="icon-box">🌍</div>
       <h3>التسهيل العابر للحدود</h3>
       <p>دعم تنقل المركبات التجارية عبر الحدود بموجب وثيقة التريبتك.</p>
     </div>
   </div>
 </section>
 
-<section class="why" id="why">
-  <div style="text-align:center; margin-bottom:10px;">
+<section class="why">
+  <div style="text-align:center;">
     <div class="section-tag">لماذا نحن</div>
     <h2 class="section-title">الفرق الذي تشعر به</h2>
-    <p class="section-sub" style="margin:0 auto;">اخترنا الاحترافية طريقاً وجعلنا رضا العميل غايتنا.</p>
+    <p class="section-sub">اخترنا الاحترافية طريقاً وجعلنا رضا العميل غايتنا.</p>
   </div>
+  
   <div class="why-grid">
     <div class="why-card">
       <div class="num">01</div>
       <h4>سرعة الإنجاز</h4>
-      <p>إجراءات مُبسَّطة تضمن لك الحصول على سيارتك في أقصر وقت ممكن.</p>
+      <p>إجراءات مبسطة تضمن لك الحصول على سيارتك في أقصر وقت.</p>
     </div>
     <div class="why-card">
       <div class="num">02</div>
       <h4>شفافية التكاليف</h4>
-      <p>نزودك بكشف تفصيلي للرسوم الجمركية قبل الشروع في أي إجراء.</p>
+      <p>كشف تفصيلي للرسوم الجمركية قبل الشروع في أي إجراء.</p>
     </div>
     <div class="why-card">
       <div class="num">03</div>
       <h4>خبرة متخصصة</h4>
-      <p>سنوات من العمل في تخليص السيارات بأنواعها داخل ميناء الإسكندرية.</p>
+      <p>أكثر من 15 سنة في تخليص السيارات داخل ميناء الإسكندرية.</p>
     </div>
     <div class="why-card">
       <div class="num">04</div>
       <h4>متابعة مستمرة</h4>
-      <p>فريقنا معك خطوة بخطوة للإجابة على استفساراتك على مدار الساعة.</p>
+      <p>تحديثات لحظية عن سير إجراءات سيارتك على مدار الساعة.</p>
     </div>
   </div>
 </section>
 
+<div class="fb-banner">
+  <div class="section-tag">تابعنا</div>
+  <p>اعرف أكثر على فيسبوك</p>
+  <p style="font-size:.9rem; color:var(--text-gray); margin-top:-10px; margin-bottom:20px;">شاهد أحدث السيارات التي تم تخليصها، وأخبار الشركة، وتواصل معنا مباشرة عبر صفحتنا الرسمية.</p>
+  <a href="https://www.facebook.com/share/18iQDAXuWn/" class="btn-fb-banner" target="_blank">📘 صفحة المحمدية على فيسبوك</a>
+</div>
+
 <section class="contact" id="contact">
-  <div class="contact-wrapper">
-    <div>
-      <div class="section-tag">تواصل معنا</div>
-      <h2 class="section-title">يسعدنا خدمتك في أي وقت</h2>
-      <p class="section-sub">تواصل معنا الآن للحصول على استشارة مجانية وحساب تفصيلي للتكلفة المتوقعة.</p>
-      <div class="contact-info">
-        <div class="contact-item">
-          <span class="ci-icon">📍</span>
-          <div>
-            <strong>الموقع</strong>
-            <span>ميناء الإسكندرية، مصر</span>
-          </div>
-        </div>
-        <div class="contact-item">
-          <span class="ci-icon">📞</span>
-          <div>
-            <strong>اتصل بنا</strong>
-            <a href="tel:+201000000000">اضغط للاتصال المباشر</a>
-          </div>
-        </div>
+  <div style="text-align:center;">
+    <div class="section-tag">تواصل معنا</div>
+    <h2 class="section-title">نحن هنا لخدمتك</h2>
+    <p class="section-sub">تواصل مع أ/ إسلام رزق مباشرة للحصول على استشارة مجانية وعرض سعر فوري.</p>
+  </div>
+
+  <div class="info-list">
+    <div class="info-card">
+      <div class="icon">📱</div>
+      <div>
+        <strong>رقم الهاتف / واتساب</strong>
+        <a href="tel:+201274833844">01274833844</a>
       </div>
     </div>
-    <div class="contact-form">
-      <h3>أرسل استفسارك</h3>
-      <form action="#">
-        <div class="form-group">
-          <label>الاسم بالكامل</label>
-          <input type="text" placeholder="اسمك الكريم" required />
-        </div>
-        <div class="form-group">
-          <label>نوع السيارة / المركبة</label>
-          <input type="text" placeholder="مثال: مرسيدس E200 أو سيارة كهربائية BYD" required />
-        </div>
-        <div class="form-group">
-          <label>نوع الخدمة المطلوبة</label>
-          <select>
-            <option>تخلص جمركي كامل</option>
-            <option>خدمة التريبتك</option>
-            <option>استشارة جمركية</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>تفاصيل إضافية</label>
-          <textarea placeholder="اكتب أي تفاصيل أو أسئلة هنا..."></textarea>
-        </div>
-        <button type="submit" class="btn-submit">إرسال الطلب</button>
-      </form>
+    <div class="info-card">
+      <div class="icon">👤</div>
+      <div>
+        <strong>صاحب الشركة</strong>
+        <span>أ / إسلام رزق</span>
+      </div>
     </div>
+    <div class="info-card">
+      <div class="icon">📍</div>
+      <div>
+        <strong>الموقع</strong>
+        <span>ميناء الإسكندرية، مصر</span>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="icon">📘</div>
+      <div>
+        <strong>فيسبوك</strong>
+        <a href="https://www.facebook.com/share/18iQDAXuWn/" target="_blank">صفحة المحمدية</a>
+      </div>
+    </div>
+    <div class="info-card">
+      <div class="icon">🕒</div>
+      <div>
+        <strong>ساعات العمل</strong>
+        <span>السبت - الخميس / 8 ص - 6 م</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form">
+    <h3>أرسل استفساركم</h3>
+    <form action="#">
+      <div class="form-group">
+        <label>الاسم الكامل</label>
+        <input type="text" placeholder="اسمك الكريم" required />
+      </div>
+      <div class="form-group">
+        <label>رقم الهاتف</label>
+        <input type="tel" placeholder="رقم للتواصل" required />
+      </div>
+      <div class="form-group">
+        <label>نوع السيارة</label>
+        <select>
+          <option>اختر نوع السيارة</option>
+          <option>سيارة ألمانية</option>
+          <option>كهربائية صينية</option>
+          <option>سيارات نقل</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>تفاصيل الطلب</label>
+        <textarea placeholder="اكتب تفاصيل طلبك هنا..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">📱 إرسال عبر واتساب</button>
+    </form>
   </div>
 </section>
 
 <footer>
-  <p>جميع الحقوق محفوظة © 2026 <strong>المحمدية للتخليص الجمركي</strong></p>
+  <h2>المحمدية</h2>
+  <div class="sub">للتخليص الجمركي - ميناء الإسكندرية</div>
+  <div class="details">
+    أ/ إسلام رزق | 📞 01274833844<br/>
+    📘 صفحتنا على فيسبوك<br/>
+    جميع الحقوق محفوظة © 2026 - المحمدية للتخليص الجمركي
+  </div>
+  <div class="copy">
+    Developed with Professional Standards
+  </div>
 </footer>
 
-<a href="https://wa.me/201000000000" class="wa-float" target="_blank">💬</a>
+<a href="https://wa.me/201274833844" class="wa-float" target="_blank">💬</a>
+
+<script>
+  function switchTab(tabId) {
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.car-card').forEach(card => card.classList.remove('active'));
+    
+    event.currentTarget.classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+  }
+</script>
 
 </body>
 </html>
