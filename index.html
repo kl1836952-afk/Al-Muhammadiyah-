@@ -199,6 +199,50 @@
             50% { transform: translateY(-15px); }
         }
 
+        /* About Section */
+        .about-section {
+            padding: 100px 8%;
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--text-gray);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .owner-tag {
+            border-right: 3px solid var(--primary-red);
+            padding-right: 15px;
+            margin-top: 25px;
+        }
+
+        .owner-tag h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .owner-tag p {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 0;
+        }
+
         /* Brands Section */
         .brands-section {
             padding: 60px 8%;
@@ -497,12 +541,13 @@
 
         /* Responsiveness */
         @media (max-width: 968px) {
-            .hero {
+            .hero, .about-grid {
                 flex-direction: column;
                 text-align: center;
                 justify-content: center;
                 padding-top: 100px;
             }
+            .about-grid { grid-template-columns: 1fr; }
             .hero-text { max-width: 100%; }
             .hero-btns { justify-content: center; }
             .hero-image { width: 350px; height: 350px; margin-top: 40px; }
@@ -517,6 +562,7 @@
         <a href="#" class="logo">المحمدية<span>.</span></a>
         <div class="nav-links">
             <a href="#">الرئيسية</a>
+            <a href="#about">من نحن</a>
             <a href="#triptyque">الأنظمة الجمركية</a>
             <a href="#contact">تواصل معنا</a>
         </div>
@@ -526,7 +572,7 @@
     <section class="hero">
         <div class="hero-text">
             <div class="tag">أسرع تخليص جمركي في مصر</div>
-            <h1>تخليص جمركي احترافي لسيارات <span>الأوروبية</span></h1>
+            <h1>تخليص جمركي احترافي لسيارات <span>الشركات الأوروبية</span></h1>
             <p>نحن متفوقون ومتميزون في إنهاء كافة الإجراءات الجمركية لسياراتك أو شحناتك التجارية في أسرع وقت داخل ميناء الإسكندرية، بأعلى كفاءة وأقل التكاليف.</p>
             <div class="hero-btns">
                 <a href="#contact" class="btn-main">ابدأ الآن</a>
@@ -539,10 +585,27 @@
         </div>
     </section>
 
+    <section class="about-section" id="about">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>شركة المحمدية للتخليص الجمركي</h2>
+                <p>تعتبر شركة المحمدية رائدة في مجال الاستخلاص والتخليص الجمركي عبر ميناء الإسكندرية ومختلف موانئ الجمهورية، حيث نمتاز بالدقة المتناهية والالتزام الكامل بالجداول الزمنية لضمان خروج شحناتكم بأمان تام وبدون أي غرامات إضافية.</p>
+                <div class="owner-tag">
+                    <h4>أ / إسلام محمد</h4>
+                    <p>صاحب ورئيس مجلس إدارة الشركة</p>
+                </div>
+            </div>
+            <div style="text-align: center; font-size: 80px; color: rgba(255,26,26,0.15);">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+        </div>
+    </section>
+
     <section class="brands-section">
         <div class="brands-title">متخصصون في الإفراج عن أفضل الماركات الأوروبية والعالمية</div>
         <div class="brands-grid">
-            <i class="fab fa-space-awesome"></i> <span>BMW</span>
+            <i class="fab fa-space-awesome"></i>
+            <span>BMW</span>
             <span>AUDI</span>
             <span>PORSCHE</span>
             <span>FERRARI</span>
@@ -614,27 +677,27 @@
         <div class="contact-container">
             <div class="contact-info">
                 <h2>تواصل معنا اليوم</h2>
-                <p>فريقنا مستعد للرد على كافة استفساراتكم بخصوص أسعار الجمارك والتحضير المسبق لملفات السيارات والشحنات.</p>
+                <p>فريقنا بقيادة <strong>أ/ إسلام محمد</strong> مستعد للرد على كافة استفساراتكم بخصوص أسعار الجمارك والتحضير المسبق لملفات السيارات والشحنات.</p>
                 
                 <div class="contact-method">
                     <div class="icon-box"><i class="fas fa-phone"></i></div>
                     <div>
                         <h4>اتصل بنا مباشرة</h4>
-                        <p>+20 100 000 0000</p>
+                        <p>01274833844</p>
                     </div>
                 </div>
                 <div class="contact-method">
                     <div class="icon-box"><i class="fab fa-whatsapp"></i></div>
                     <div>
                         <h4>واتساب متاح 24 ساعة</h4>
-                        <p>+20 100 000 0000</p>
+                        <p>01274833844</p>
                     </div>
                 </div>
                 <div class="contact-method">
                     <div class="icon-box"><i class="fas fa-envelope"></i></div>
                     <div>
                         <h4>البريد الإلكتروني</h4>
-                        <p>info@almohamadia.com</p>
+                        <p>eslamrezk80@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -664,11 +727,10 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 شركة المحمدية للتخليص الجمركي. جميع الحقوق محفوظة.</p>
+        <p>&copy; 2026 شركة المحمدية للتخليص الجمركي - إدارة أ/ إسلام محمد. جميع الحقوق محفوظة.</p>
         <div class="social-links">
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://wa.me/201000000000" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/share/1KmfWC115S/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/201274833844" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
     </footer>
 
