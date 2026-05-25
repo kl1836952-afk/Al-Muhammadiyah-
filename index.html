@@ -1,276 +1,321 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>المحمدية للتخليص الجمركي</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Tajawal:wght@700;800;900&display=swap" rel="stylesheet"/>
-<style>
-:root{--red:#e01a1a;--dark:#b01010;--black:#0d0d0d;--white:#fff;--gray:#f4f4f4;}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Cairo',sans-serif;color:var(--black);overflow-x:hidden;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المحمدية للتخليص الجمركي والاستيراد</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ==========================================
+           1. الإعدادات العامة والمتغيرات (Global)
+           ========================================== */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
 
-/* NAV */
-nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,10,10,.97);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 4%;height:70px;border-bottom:2px solid var(--red);}
-.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.nav-brand img{height:46px;border-radius:6px;}
-.nav-brand-text h2{font-family:'Tajawal',sans-serif;font-size:1.15rem;font-weight:900;color:#fff;}
-.nav-brand-text span{font-size:.65rem;color:var(--red);font-weight:700;display:block;}
-.nav-links{display:flex;gap:18px;list-style:none;}
-.nav-links a{color:#ccc;text-decoration:none;font-size:.82rem;font-weight:600;transition:color .2s;}
-.nav-links a:hover{color:var(--red);}
-.nav-cta{background:var(--red)!important;color:#fff!important;padding:6px 16px;border-radius:4px;}
+        :root {
+            --bg-main: #0b0c10;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #ffffff;
+            --text-secondary: #a0aec0;
+            --primary-red: #ff1a1a;
+            --primary-blue: #007bff;
+            --primary-green: #28a745;
+            --primary-yellow: #ffc107;
+            --primary-purple: #8c52ff;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-/* HERO */
-.hero{min-height:100vh;background:linear-gradient(150deg,#060606,#130000 60%,#1e0000);display:flex;align-items:center;justify-content:center;text-align:center;padding:110px 5% 70px;position:relative;overflow:hidden;}
-.hero-ship{position:absolute;bottom:-30px;left:-60px;font-size:20rem;opacity:.025;animation:drift 14s ease-in-out infinite alternate;pointer-events:none;}
-@keyframes drift{from{transform:translateX(0) rotate(-4deg);}to{transform:translateX(80px) rotate(4deg);}}
-.hero-inner{position:relative;z-index:1;max-width:800px;}
-.hero-name-block{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:18px;animation:up .8s .1s both;}
-.hero-name-block img{width:95px;border-radius:12px;box-shadow:0 0 40px rgba(224,26,26,.35);}
-.hero-name-ar{font-family:'Tajawal',sans-serif;font-size:clamp(2.8rem,8vw,5.5rem);font-weight:900;color:#fff;line-height:1;}
-.hero-name-ar span{color:var(--red);}
-.hero-name-sub{font-size:.85rem;color:rgba(255,255,255,.45);font-weight:700;letter-spacing:.1em;margin-top:4px;}
-.hero-badge{display:inline-block;background:rgba(224,26,26,.15);border:1px solid rgba(224,26,26,.4);color:var(--red);padding:5px 18px;border-radius:30px;font-size:.8rem;font-weight:700;margin-bottom:18px;animation:up .7s both;}
-.hero h1{font-family:'Tajawal',sans-serif;font-size:clamp(1.1rem,2.5vw,1.7rem);font-weight:700;color:rgba(255,255,255,.82);line-height:1.55;margin-bottom:16px;animation:up .9s .25s both;}
-.hero h1 em{color:var(--red);font-style:normal;}
-.hero p{color:#aaa;font-size:.98rem;max-width:540px;margin:0 auto 30px;line-height:1.9;animation:up .9s .35s both;}
-.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:up .9s .45s both;}
-.btn-red{background:var(--red);color:#fff;padding:13px 28px;border-radius:5px;font-size:.92rem;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(224,26,26,.4);transition:all .25s;}
-.btn-red:hover{background:var(--dark);transform:translateY(-2px);}
-.btn-fb{background:#1877f2;color:#fff;padding:13px 28px;border-radius:5px;font-size:.92rem;font-weight:700;text-decoration:none;transition:all .25s;}
-.btn-fb:hover{background:#1565d8;transform:translateY(-2px);}
-.btn-ghost{border:2px solid rgba(255,255,255,.4);color:#fff;padding:11px 24px;border-radius:5px;font-size:.92rem;font-weight:700;text-decoration:none;transition:all .25s;}
-.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08);}
-@keyframes up{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-/* STATS */
-.stats{background:var(--red);padding:22px 5%;display:flex;flex-wrap:wrap;justify-content:center;gap:44px;}
-.stat{text-align:center;color:#fff;}
-.stat-n{font-size:2.2rem;font-weight:900;line-height:1;}
-.stat-l{font-size:.76rem;opacity:.88;margin-top:3px;}
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-/* SECTION */
-section{padding:76px 5%;}
-.sec-tag{display:inline-block;background:rgba(224,26,26,.1);color:var(--red);font-size:.74rem;font-weight:800;letter-spacing:.12em;padding:4px 14px;border-radius:20px;margin-bottom:10px;}
-.sec-title{font-family:'Tajawal',sans-serif;font-size:clamp(1.5rem,3.5vw,2.3rem);font-weight:800;line-height:1.3;margin-bottom:10px;}
-.sec-sub{color:#666;font-size:.95rem;line-height:1.85;max-width:560px;}
+        /* تخصيص شريط التمرير */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-main);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-red);
+        }
 
-/* GALLERY */
-.gallery{background:#0a0a0a;}
-.gallery .sec-title{color:#fff;}
-.gallery .sec-tag{background:rgba(224,26,26,.2);}
-.gallery .sec-sub{color:#666;}
-.g-header{text-align:center;margin-bottom:42px;}
-.g-header .sec-sub{margin:0 auto;}
-.tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
-.tab{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#bbb;padding:9px 22px;border-radius:30px;font-family:'Cairo',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;transition:all .25s;}
-.tab:hover,.tab.on{background:var(--red);border-color:var(--red);color:#fff;}
-.tc{display:none;max-width:1200px;margin:0 auto;}
-.tc.on{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;}
+        /* ==========================================
+           2. الهيدر وشريط التنقل (Navbar)
+           ========================================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 12, 16, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
 
-/* ALL CARS LIST */
-.tc-list{display:none;max-width:1100px;margin:0 auto;}
-.tc-list.on{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;}
-.ac-item{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:13px 15px;transition:all .25s;}
-.ac-item:hover{border-color:var(--red);background:rgba(224,26,26,.07);}
-.ac-item .ico{font-size:1.7rem;flex-shrink:0;}
-.ac-item strong{color:#fff;font-size:.9rem;display:block;}
-.ac-item span{color:#666;font-size:.74rem;}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* CAR CARD */
-.car-card{border-radius:13px;overflow:hidden;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);transition:all .3s;}
-.car-card:hover{transform:translateY(-6px);border-color:var(--red);box-shadow:0 16px 40px rgba(224,26,26,.2);}
-.car-svg-wrap{position:relative;overflow:hidden;}
-.car-svg-wrap svg{width:100%;height:190px;display:block;transition:transform .4s;}
-.car-card:hover svg{transform:scale(1.04);}
-.cbadge{position:absolute;top:10px;right:10px;color:#fff;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;}
-.ci{padding:15px 17px 20px;}
-.ci h3{color:#fff;font-size:.95rem;font-weight:700;margin-bottom:5px;}
-.ci p{color:#666;font-size:.81rem;line-height:1.65;}
-.ctag{display:inline-block;margin-top:9px;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:12px;}
-.de{background:rgba(224,26,26,.18);color:var(--red);}
-.ev{background:rgba(26,107,181,.2);color:#4a9eff;}
-.tr{background:rgba(80,80,80,.3);color:#aaa;}
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-/* SERVICES */
-.services{background:var(--gray);}
-.s-header{text-align:center;margin-bottom:48px;}
-.s-header .sec-sub{margin:0 auto;}
-.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:1200px;margin:0 auto;}
-.s-card{background:#fff;border-radius:12px;padding:28px 24px;box-shadow:0 2px 14px rgba(0,0,0,.06);border-top:4px solid transparent;transition:all .3s;}
-.s-card:hover{border-top-color:var(--red);transform:translateY(-5px);}
-.s-card .ico{font-size:2.3rem;margin-bottom:14px;display:block;}
-.s-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;}
-.s-card p{color:#666;font-size:.86rem;line-height:1.75;}
+        .logo span {
+            color: var(--primary-red);
+        }
 
-/* SCHEMES — vertical rows */
-.schemes{background:var(--black);}
-.schemes .sec-title{color:#fff;}
-.schemes .sec-tag{background:rgba(224,26,26,.2);}
-.schemes .sec-sub{color:#777;}
-.sch-header{text-align:center;margin-bottom:48px;}
-.sch-header .sec-sub{margin:0 auto;}
-.sch-list{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:16px;}
-.sch-row{display:flex;align-items:flex-start;gap:18px;border-radius:14px;padding:22px 24px;border-right:5px solid var(--rc,#e01a1a);background:rgba(255,255,255,.04);transition:all .3s;}
-.sch-row:hover{background:rgba(255,255,255,.07);transform:translateX(-4px);}
-.sch-ico{font-size:2.4rem;flex-shrink:0;margin-top:2px;}
-.sch-body h3{font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-.sch-body>p{font-size:.85rem;color:#888;line-height:1.7;margin-bottom:12px;}
-.sch-feats{display:flex;flex-wrap:wrap;gap:7px 18px;}
-.sch-feats span{font-size:.8rem;color:#ccc;font-weight:600;}
-.new-badge{background:var(--red);color:#fff;font-size:.62rem;padding:2px 8px;border-radius:20px;font-weight:700;}
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
 
-/* WHY */
-.why{background:var(--gray);}
-.why-header{text-align:center;margin-bottom:44px;}
-.why-header .sec-sub{margin:0 auto;}
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:20px;max-width:1100px;margin:0 auto;}
-.why-card{background:#fff;border-radius:10px;padding:24px 20px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.06);}
-.why-card .n{font-size:2.4rem;font-weight:900;color:var(--red);line-height:1;}
-.why-card h4{font-size:.92rem;font-weight:700;margin:7px 0 5px;}
-.why-card p{font-size:.8rem;color:#666;line-height:1.65;}
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
 
-/* FB SECTION */
-.fb-sec{background:#fff;padding:60px 5%;text-align:center;border-top:1px solid #eee;}
-.fb-sec h2{font-family:'Tajawal',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:10px;}
-.fb-sec p{color:#666;max-width:460px;margin:0 auto 26px;line-height:1.8;}
-.fb-big{display:inline-flex;align-items:center;gap:10px;background:#1877f2;color:#fff;padding:15px 38px;border-radius:8px;font-size:1.05rem;font-weight:800;text-decoration:none;box-shadow:0 6px 24px rgba(24,119,242,.35);transition:all .3s;}
-.fb-big:hover{background:#1565d8;transform:translateY(-3px);}
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-primary);
+        }
 
-/* CONTACT */
-.contact{background:var(--gray);}
-.con-wrap{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;max-width:1100px;margin:0 auto;}
-.con-items{display:flex;flex-direction:column;gap:18px;margin-top:26px;}
-.con-item{display:flex;align-items:center;gap:14px;background:#fff;border-radius:10px;padding:16px 18px;box-shadow:0 2px 10px rgba(0,0,0,.05);}
-.con-item .ico{font-size:1.5rem;flex-shrink:0;}
-.con-item strong{display:block;font-size:.76rem;color:#888;margin-bottom:2px;}
-.con-item a,.con-item span{font-size:.95rem;font-weight:700;color:var(--black);text-decoration:none;}
-.con-item a:hover{color:var(--red);}
-.con-form{background:var(--black);border-radius:16px;padding:36px 32px;}
-.con-form h3{color:#fff;font-size:1.2rem;font-weight:800;margin-bottom:24px;}
-.fg{margin-bottom:15px;}
-.fg label{display:block;color:#ccc;font-size:.78rem;font-weight:600;margin-bottom:5px;}
-.fg input,.fg textarea,.fg select{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#fff;padding:11px 13px;border-radius:7px;font-family:'Cairo',sans-serif;font-size:.88rem;outline:none;transition:border .2s;}
-.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--red);}
-.fg textarea{min-height:100px;resize:vertical;}
-.fg select option{background:#1a1a1a;}
-.btn-sub{width:100%;background:var(--red);color:#fff;border:none;padding:13px;border-radius:7px;font-family:'Cairo',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:background .25s;}
-.btn-sub:hover{background:var(--dark);}
+        .nav-btn {
+            background: var(--primary-red);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 26, 26, 0.3);
+        }
 
-/* FOOTER */
-footer{background:var(--black);color:#888;text-align:center;padding:36px 5%;border-top:2px solid var(--red);}
-.ft{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:14px;}
-.ft img{height:54px;border-radius:8px;}
-.ft-name h3{font-family:'Tajawal',sans-serif;font-size:1.5rem;font-weight:900;color:#fff;}
-.ft-name span{font-size:.72rem;color:var(--red);font-weight:700;}
-footer p{font-size:.78rem;line-height:2;}
-footer strong{color:var(--red);}
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 26, 26, 0.5);
+        }
 
-/* WA */
-.wa{position:fixed;bottom:22px;left:22px;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;text-decoration:none;z-index:9999;box-shadow:0 4px 18px rgba(37,211,102,.5);animation:pg 2.5s infinite;transition:transform .2s;}
-.wa:hover{transform:scale(1.1);}
-@keyframes pg{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.5);}50%{box-shadow:0 4px 34px rgba(37,211,102,.85);}}
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
 
-@media(max-width:768px){
-  .nav-links{display:none;}
-  .con-wrap{grid-template-columns:1fr;}
-  .hero-name-block{flex-direction:column;gap:10px;}
-}
-</style>
-</head>
-<body>
+        /* ==========================================
+           3. قسم الواجهة الرئيسي (Hero Section)
+           ========================================== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 120px 20px 60px 20px;
+            background: radial-gradient(circle at top left, rgba(255,26,26,0.08), transparent 40%),
+                        radial-gradient(circle at bottom right, rgba(0,123,255,0.05), transparent 40%);
+            text-align: center;
+        }
 
-<nav>
-  <a href="#home" class="nav-brand">
-    <img src="/mnt/user-data/uploads/1000456549.jpg" alt="المحمدية"/>
-    <div class="nav-brand-text">
-      <h2>المحمدية</h2>
-      <span>للتخليص الجمركي • الإسكندرية</span>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#cars">سياراتنا</a></li>
-    <li><a href="#services">خدماتنا</a></li>
-    <li><a href="#schemes">أنظمة الاستيراد</a></li>
-    <li><a href="#fb-sec">فيسبوك</a></li>
-    <li><a href="#contact" class="nav-cta">تواصل معنا</a></li>
-  </ul>
-</nav>
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
 
-<section class="hero" id="home">
-  <div class="hero-ship">🚢</div>
-  <div class="hero-inner">
-    <div class="hero-name-block">
-      <img src="/mnt/user-data/uploads/1000456549.jpg" alt="لوجو المحمدية"/>
-      <div>
-        <div class="hero-name-ar">ال<span>مـحمدية</span></div>
-        <div class="hero-name-sub">للتخليص الجمركي — ميناء الإسكندرية</div>
-      </div>
-    </div>
-    <div class="hero-badge">⚓ خبرة واحترافية في خدمتك</div>
-    <h1>متخصصون في <em>السيارات الأوروبية</em> والصينية الكهربائية وسيارات النقل</h1>
-    <p>إجراءات جمركية سريعة وموثوقة — نحن شريكك من لحظة وصول السفينة حتى تسلّم مفاتيح سيارتك.</p>
-    <div class="hero-btns">
-      <a href="https://wa.me/201274833844" target="_blank" class="btn-red">📲 واتساب فوري</a>
-      <a href="https://www.facebook.com/share/18iQDAXuWn/" target="_blank" class="btn-fb">📘 صفحتنا على فيسبوك</a>
-      <a href="#cars" class="btn-ghost">شاهد سياراتنا ↓</a>
-    </div>
-  </div>
-</section>
+        .hero-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(255, 26, 26, 0.1);
+            border: 1px solid rgba(255, 26, 26, 0.2);
+            color: var(--primary-red);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
 
-<div class="stats">
-  <div class="stat"><div class="stat-n">+5000</div><div class="stat-l">سيارة تم تخليصها</div></div>
-  <div class="stat"><div class="stat-n">+15</div><div class="stat-l">سنة خبرة</div></div>
-  <div class="stat"><div class="stat-n">100%</div><div class="stat-l">التزام بالمواعيد</div></div>
-  <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">دعم متواصل</div></div>
-</div>
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
 
-<section class="gallery" id="cars">
-  <div class="g-header">
-    <div class="sec-tag">معرض السيارات</div>
-    <h2 class="sec-title">نخلص أفضل السيارات في العالم</h2>
-    <p class="sec-sub">من السيارات الأوروبية الفاخرة إلى أحدث الكهربائيات الصينية وسيارات النقل.</p>
-  </div>
-  <div class="tabs">
-    <button class="tab on"  onclick="showTab('all',this)">🚗 جميع الأنواع</button>
-    <button class="tab"     onclick="showTab('de',this)">🇪🇺 سيارات أوروبية</button>
-    <button class="tab"     onclick="showTab('ev',this)">⚡ كهربائية صينية</button>
-    <button class="tab"     onclick="showTab('tr',this)">🚛 سيارات النقل</button>
-  </div>
+        .hero h1 span {
+            color: var(--primary-red);
+        }
 
-  <div class="tc-list on" id="tab-all">
-    <div class="ac-item"><span class="ico">🇪🇺</span><div><strong>BMW</strong><span>السلسلة 3، 5، 7، X5، X7</span></div></div>
-    <div class="ac-item"><span class="ico">🇪🇺</span><div><strong>Mercedes-Benz</strong><span>C، E، S، GLE، GLS</span></div></div>
-    <div class="ac-item"><span class="ico">🇪🇺</span><div><strong>Audi</strong><span>A4، A6، Q5، Q7، e-tron</span></div></div>
-    <div class="ac-item"><span class="ico">🇪🇺</span><div><strong>Volkswagen</strong><span>Golf، Passat، Tiguan، ID.4</span></div></div>
-    <div class="ac-item"><span class="ico">⚡</span><div><strong>BYD</strong><span>Atto 3، Han، Seal، Dolphin</span></div></div>
-    <div class="ac-item"><span class="ico">⚡</span><div><strong>Zeekr</strong><span>001، 009، X</span></div></div>
-    <div class="ac-item"><span class="ico">⚡</span><div><strong>Geely</strong><span>Coolray، Tugella، EX5</span></div></div>
-    <div class="ac-item"><span class="ico">⚡</span><div><strong>Chery / OMODA</strong><span>Omoda 5، Tiggo EV</span></div></div>
-    <div class="ac-item"><span class="ico">⚡</span><div><strong>MG Electric</strong><span>MG4، ZS EV، MG5</span></div></div>
-    <div class="ac-item"><span class="ico">⚡</span><div><strong>JAC</strong><span>E-JS4، iEV7</span></div></div>
-    <div class="ac-item"><span class="ico">⚡</span><div><strong>Nio</strong><span>ET5، ET7، EL7</span></div></div>
-    <div class="ac-item"><span class="ico">🇯🇵</span><div><strong>Toyota</strong><span>Camry، Land Cruiser، Hilux</span></div></div>
-    <div class="ac-item"><span class="ico">🇯🇵</span><div><strong>Lexus</strong><span>LS، LX، GX، ES</span></div></div>
-    <div class="ac-item"><span class="ico">🇯🇵</span><div><strong>Nissan</strong><span>Patrol، X-Trail، Navara</span></div></div>
-    <div class="ac-item"><span class="ico">🇯🇵</span><div><strong>Mitsubishi</strong><span>Pajero، L200، Outlander</span></div></div>
-    <div class="ac-item"><span class="ico">🇰🇷</span><div><strong>Hyundai / Kia</strong><span>Tucson، Sportage، Sorento</span></div></div>
-    <div class="ac-item"><span class="ico">🇺🇸</span><div><strong>Chevrolet / Ford</strong><span>Tahoe، Explorer، Transit</span></div></div>
-    <div class="ac-item"><span class="ico">🚛</span><div><strong>MAN / Volvo</strong><span>شاحنات نقل ثقيل وتريلات</span></div></div>
-    <div class="ac-item"><span class="ico">🚛</span><div><strong>Mercedes Actros</strong><span>شاحنات ثقيلة متخصصة</span></div></div>
-    <div class="ac-item"><span class="ico">🚐</span><div><strong>Sprinter / Hiace</strong><span>نقل متوسط وميكروباص</span></div></div>
-  </div>
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 35px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-  <div class="tc" id="tab-de">
-    <div class="car-card">
-      <div class="car-svg-wrap">
-        <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1a1a2e"/><stop offset="100%" style="stop-color:#16213e"/></linearGradient></defs><rect width="600" height="200" fill="url(#g1)"/><rect x="100" y="115" width="400" height="55" rx="8" fill="#2a2a3e"/><path d="M150 115 Q180 75 230 68 L370 68 Q420 75 450 115 Z" fill="#3a3a5e"/><rect x="90" y="148" width="420" height="22" rx="4" fill="#1a1a2e"/><circle cx="175" cy="175" r="28" fill="#111" stroke="#555" stroke-width="4"/><circle cx="175" cy="175" r="14" fill="#333" stroke="#888" stroke-width="2"/><circle cx="425" cy="175" r="28" fill="#111" stroke="#555" stroke-width="4"/><circle cx="425" cy="175" r="14" fill="#333" stroke="#888" stroke-width="2"/><path d="M210 112 L230 78 L290 73 L290 112 Z" fill="#4488cc" opacity="0.7"/><path d="M295 112 L295 73 L360 73 L378 112 Z" fill="#4488cc" opacity="0.7"/><circle cx="300" cy="58" r="18" fill="none" stroke="#e0e0e0" stroke-width="2"/><text x="300" y="63" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" font-family="Arial">BMW</text><ellipse cx="455" cy="132" rx="14" ry="8" fill="#ffffaa" opacity="0.8"/><ellipse cx="300" cy="200" rx="230" ry="10" fill="#000" opacity="0.4"/></svg>
-        <div class="cbadge" style="background:#111">BMW</div>
-      </div>
-      <div class="ci"><h3>BMW — بي إم دبليو</h3><p>السلسلة 3، 5، 7 وX Series — تخليص كامل بجميع الأوراق.</p><span class="ctag de">✅ متاح التخليص</span></div>
-    </div>
-    <div class="car-card">
-      <div class="car-svg-wrap">
-        <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1a1200"/><stop offset="100%" style="stop-color:#2a1e00"/></linearGradient></defs><rect width="600" height="200" fill="url(#g2)"/><rect x="85" y="118" width="430" height="52" rx="10" fill="#c0a060"/><path d="M140 118 Q165 72 220 63 L380 63 Q435 72 460 118 Z" fill="#d4b070"/><rect x="80" y="150" width="440" height="20" rx="4" fill
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-primary {
+            background: var(--primary-red);
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 26, 26, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 26, 26, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 14px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ==========================================
+           4. قسم من نحن والمميزات (About Section)
+           ========================================== */
+        .about {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-card h4 {
+            font-size: 2.2rem;
+            color: var(--primary-red);
+            font-weight: 900;
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        .about-img {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #111, #222);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-img i {
+            font-size: 5rem;
+            color: rgba(255,26,26,0.2);
+        }
+
+        /* ==========================================
+           5. قسم أنظمة الإفراج الجمركي (Triptyque Section)
+           ========================================== */
+        .triptyque {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        .tript-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 15px
+      
