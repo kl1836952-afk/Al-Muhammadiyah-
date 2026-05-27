@@ -98,7 +98,6 @@
             overflow: hidden;
         }
 
-        /* كود السيرفر أو مسار الفيديو الخلفي */
         .video-bg {
             position: absolute;
             top: 50%;
@@ -112,14 +111,14 @@
             object-fit: cover;
         }
 
-        /* طبقة تعتيم حماية النصوص فوق الفيديو */
+        /* طبقة تعتيم حماية النصوص فوق الفيديو الجديد */
         .video-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.8));
+            background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.75));
             z-index: -1;
         }
 
@@ -570,8 +569,8 @@
     </nav>
 
     <section class="hero">
-        <video class="video-bg" autoplay loop muted playsinline>
-            <source src="1000457915.mp4" type="video/mp4">
+        <video class="video-bg" autoplay loop muted playsinline webkit-playsinline preload="auto">
+            <source src="1000457920.mp4" type="video/mp4">
             تصفحك لا يدعم تشغيل خلفيات الفيديو.
         </video>
         <div class="video-overlay"></div>
